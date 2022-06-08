@@ -10,17 +10,19 @@ const AddTask = ({ setFormData, formData }) => {
     done: false,
     count: 1,
   };
-  const [text, setText] = useState(initialState);
+
+  const [form, setForm] = useState(initialState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setText({ ...text, [name]: value });
+    setForm({ ...form, [name]: value });
   };
 
   const handleSubmit = () => {
-    setFormData([...formData, text]);
+    setFormData([...formData, form]);
   };
-  console.log("checking", formData);
+
+  console.log("id_check", form.id);
 
   return (
     <div className={styles.todoForm}>
@@ -32,7 +34,7 @@ const AddTask = ({ setFormData, formData }) => {
       />
       <button
         data-testid="add-task-button"
-        disabled={text.text.length === 0}
+        disabled={form.text.length === 0}
         onClick={() => {
           handleSubmit();
         }}

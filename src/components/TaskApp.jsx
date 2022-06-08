@@ -11,12 +11,12 @@ const TaskApp = () => {
   const [formData, setFormData] = useState([...data]);
 
   const handleDelete = (id) => {
-    setFormData(formData.filter((el) => el.id !== id));
+    setFormData(formData.filter((el) => el.text !== id));
   };
 
   const handleStatus = (id) => {
     setFormData(
-      formData.map((el) => (el.id === id ? { ...el, done: !el.done } : el))
+      formData.map((el) => (el.text === id ? { ...el, done: !el.done } : el))
     );
   };
 

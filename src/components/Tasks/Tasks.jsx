@@ -8,14 +8,16 @@ const Tasks = ({ data, handleDelete, handleStatus }) => {
     <>
       <ul data-testid="tasks" className={styles.tasks}>
         {/* Task List */}
-        {data.map((e) => (
-          <Task
-            e={e}
-            key={e.id}
-            handleDelete={handleDelete}
-            handleStatus={handleStatus}
-          />
-        ))}
+        {data.map((e, i) => {
+          return (
+            <Task
+              e={e}
+              key={i}
+              handleDelete={handleDelete}
+              handleStatus={handleStatus}
+            />
+          );
+        })}
       </ul>
       <div data-testid="tasks-empty" className={styles.empty}>
         {/* Show when No Tasks are present */}
