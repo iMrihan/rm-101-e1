@@ -1,3 +1,10 @@
 .task {
   display: flex;
+  justify-content: center;
+}
+.complete {
+  text-decoration: line-through;
+}
+.incomplete {
+  text-decoration: none;
 }

@@ -1,18 +1,20 @@
 import React from "react";
 import styles from "./tasks.module.css";
 import Task from "../Task/Task";
-import data from "../../data/tasks.json";
-import { useState } from "react";
-const Tasks = () => {
-  const [formData, setFormData] = useState([...data]);
 
+const Tasks = ({ data, handleDelete, handleStatus }) => {
   // NOTE: do not delete `data-testid` key value pair
   return (
     <>
       <ul data-testid="tasks" className={styles.tasks}>
         {/* Task List */}
-        {formData.map((e) => (
-          <Task e={e} />
+        {data.map((e) => (
+          <Task
+            e={e}
+            key={e.id}
+            handleDelete={handleDelete}
+            handleStatus={handleStatus}
+          />
         ))}
       </ul>
       <div data-testid="tasks-empty" className={styles.empty}>

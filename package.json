@@ -17,7 +17,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false --bail --runInBand",
     "eject": "react-scripts eject"
-   
   },
   "eslintConfig": {
     "extends": [
@@ -38,4 +37,3 @@
     ]
   }
 }
- 
