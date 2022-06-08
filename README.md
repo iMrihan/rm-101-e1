@@ -20,14 +20,14 @@
       - [Task](./src/components/Tasks/Task/Task.jsx)
         - [Counter](./src/components/Tasks/Task/Counter/Counter.jsx)
 
-**Note** - `Make sure you use only the given components and dont create new files and folders as chaging component name, structures might result in giving you zero marks`
+**Note** - `Make sure you use only the given components and don't create new files and folders as changing component name, structures might result in giving you zero marks`
 
 ## Understanding Data Structure
 
 - [tasks.json](./src/data/tasks.json)
   - Initial Tasks to be shown on screen.
 
-**Note** - `Make sure you use only the given data and dont create new data, as chaging data might result in giving you zero marks`
+**Note** - `Make sure you use only the given data and don't create new data, as changing data might result in giving you zero marks`
 
 ## Features to build
 
