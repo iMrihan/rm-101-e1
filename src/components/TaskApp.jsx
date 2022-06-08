@@ -9,14 +9,15 @@ import data from "../data/tasks.json";
 import { useState } from "react";
 const TaskApp = () => {
   const [formData, setFormData] = useState([...data]);
+  const [text, setText] = useState("");
 
   const handleDelete = (id) => {
-    setFormData(formData.filter((el) => el.text !== id));
+    setFormData(formData.filter((el) => el.id !== id));
   };
 
   const handleStatus = (id) => {
     setFormData(
-      formData.map((el) => (el.text === id ? { ...el, done: !el.done } : el))
+      formData.map((el) => (el.id === id ? { ...el, done: !el.done } : el))
     );
   };
 
@@ -28,10 +29,15 @@ const TaskApp = () => {
       <TaskHeader formData={formData} />
 
       {/* Add Task */}
-      <AddTask setFormData={setFormData} formData={formData} />
+      <AddTask
+        setFormData={setFormData}
+        formData={formData}
+        setText={setText}
+      />
       {/* Tasks */}
       <Tasks
         data={formData}
+        text={text}
         handleDelete={handleDelete}
         handleStatus={handleStatus}
       />

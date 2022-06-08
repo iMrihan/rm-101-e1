@@ -10,7 +10,7 @@ const Task = ({ e, handleDelete, handleStatus }) => {
       <input
         type="checkbox"
         onClick={() => {
-          handleStatus(e.text);
+          handleStatus(e.id);
         }}
         data-testid="task-checkbox"
         defaultChecked={e.done}
@@ -26,7 +26,7 @@ const Task = ({ e, handleDelete, handleStatus }) => {
       <button
         data-testid="task-remove-button"
         onClick={() => {
-          handleDelete(e.text);
+          handleDelete(e.id);
         }}
       >
         Delete

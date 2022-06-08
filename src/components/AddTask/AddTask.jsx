@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./addTask.module.css";
-const AddTask = ({ setFormData, formData }) => {
+const AddTask = ({ setFormData, formData, setText }) => {
   // console.log("hello", formData, setFormData);
   // NOTE: do not delete `data-testid` key value pair
   const initialState = {
@@ -15,11 +15,19 @@ const AddTask = ({ setFormData, formData }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setText(e.target.value);
     setForm({ ...form, [name]: value });
   };
 
   const handleSubmit = () => {
-    setFormData([...formData, form]);
+    const match = formData.filter((e) => e.text === form.text).length;
+    if (match) {
+      setForm(initialState);
+      return;
+    } else {
+      setFormData([...formData, form]);
+      setForm(initialState);
+    }
   };
 
   console.log("id_check", form.id);
@@ -29,6 +37,7 @@ const AddTask = ({ setFormData, formData }) => {
       <input
         data-testid="add-task-input"
         type="text"
+        value={form.text}
         name="text"
         onChange={handleChange}
       />
