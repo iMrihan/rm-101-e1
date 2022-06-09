@@ -4,7 +4,7 @@ import styles from "./taskHeader.module.css";
 const TaskHeader = ({ formData }) => {
   // sample values to be replaced
   let totalTask = formData.length;
-  let unCompletedTask = formData.filter((e) => e.done === true).length;
+  let unCompletedTask = formData.filter((e) => e.done === false).length;
 
   // NOTE: do not delete `data-testid` key value pair
   return (

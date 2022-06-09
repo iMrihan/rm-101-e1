@@ -30,8 +30,6 @@ const AddTask = ({ setFormData, formData, setText }) => {
     }
   };
 
-  console.log("id_check", form.id);
-
   return (
     <div className={styles.todoForm}>
       <input
